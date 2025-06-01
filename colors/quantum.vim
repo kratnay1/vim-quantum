@@ -15,19 +15,20 @@ let g:quantum_italics = get(g:, 'quantum_italics', 0)
 let g:quantum_black = get(g:, 'quantum_black', 0)
 
 " Color Palette
-let s:gray1     = g:quantum_black ? '#212121' : '#263238'
-let s:gray2     = g:quantum_black ? '#292929' : '#2c3a41'
-let s:gray3     = g:quantum_black ? '#474646' : '#425762'
-let s:gray4     = g:quantum_black ? '#6a6c6c' : '#658494'
-let s:gray5     = g:quantum_black ? '#b7bdc0' : '#aebbc5'
-let s:red       = '#dd7186'
-let s:green     = '#87bb7c'
-let s:yellow    = '#d5b875'
-let s:blue      = '#70ace5'
-let s:purple    = '#a48add'
-let s:cyan      = '#69c5ce'
-let s:orange    = '#d7956e'
-let s:indigo    = '#7681de'
+let s:gray1 = '#282828'
+let s:gray2 = '#292929'
+let s:gray3 = '#474646'
+let s:gray4 = '#6a6c6c'
+let s:gray5 = '#969696'
+let s:indigo = '#8787af'
+let s:red = "#995977"
+let s:orange = "#a69883"
+let s:yellow = "#b8a683"
+let s:green = "#a19883"
+let s:aqua = "#81a2be"
+let s:blue = "#8787af"
+let s:purple = "#9f739b"
+let s:cyan = "#9f739b"
 
 function! s:HL(group, fg, bg, attr)
     let l:attr = a:attr
@@ -77,8 +78,10 @@ call s:HL('SignColumn',                     s:gray5,    s:gray1,    '')
 call s:HL('SpecialKey',                     s:gray4,    '',         '')
 call s:HL('SpellCap',                       s:blue,     s:gray2,    'undercurl')
 call s:HL('SpellBad',                       s:red,      s:gray2,    'undercurl')
-call s:HL('StatusLine',                     s:gray5,    s:gray3,    'none')
-call s:HL('StatusLineNC',                   s:gray2,    s:gray4,    '')
+" call s:HL('StatusLine',                     s:gray5,    s:gray3,    'none')
+" call s:HL('StatusLineNC',                   s:gray2,    s:gray4,    '')
+call s:HL('StatusLine',                     '#252525',    '#8e8e8e',    'none')
+call s:HL('StatusLineNC',                   '#252525',    '#7e7e7e',    '')
 call s:HL('TabLine',                        s:gray4,    s:gray2,    'none')
 call s:HL('TabLineFill',                    s:gray4,    s:gray2,    'none')
 call s:HL('TabLineSel',                     s:yellow,   s:gray3,    'none')
@@ -94,6 +97,10 @@ call s:HL('Constant',                       s:orange,   '',         '')
 call s:HL('String',                         s:green,    '',         '')
 call s:HL('Character',                      s:green,    '',         '')
 call s:HL('Identifier',                     s:red,      '',         'none')
+call s:HL('@variable',                      s:red,      '',         'none')
+call s:HL('@parameter',                     s:red,      '',         'none')
+call s:HL('@punctuation',                   s:purple,   '',         'none')
+call s:HL('@attribute',                     s:blue,     '',         'none')
 call s:HL('Function',                       s:blue,     '',         '')
 call s:HL('Statement',                      s:purple,   '',         'none')
 call s:HL('Operator',                       s:cyan,     '',         '')
@@ -101,7 +108,7 @@ call s:HL('PreProc',                        s:cyan,     '',         '')
 call s:HL('Include',                        s:blue,     '',         '')
 call s:HL('Define',                         s:purple,   '',         'none')
 call s:HL('Macro',                          s:purple,   '',         '')
-call s:HL('Type',                           s:yellow,   '',         'none')
+call s:HL('Type',                           s:blue,   '',         'none')
 call s:HL('Structure',                      s:cyan,     '',         '')
 call s:HL('Special',                        s:indigo,   '',         '')
 call s:HL('Underlined',                     s:blue,     '',         'none')
@@ -146,6 +153,11 @@ call s:HL('htmlLink',                       s:red,      '',         '')
 call s:HL('htmlTag',                        s:blue,     '',         '')
 call s:HL('htmlTitle',                      s:gray5,    '',         '')
 call s:HL('htmlSpecialTagName',             s:purple,   '',         '')
+
+" Markup languages (HTML, jsx, etc)
+call s:HL('@tag.attribute',                 s:gray5,    '',         'none')
+call s:HL('@tag',                           s:cyan,     '',         'none')
+call s:HL('@constructor.tsx',               s:gray5,    '',         'none')
 
 " Javascript
 call s:HL('javaScriptBraces',               s:gray5,    '',         '')
