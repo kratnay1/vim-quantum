@@ -20,7 +20,6 @@ let s:gray2 = '#292929'
 let s:gray3 = '#474646'
 let s:gray4 = '#6a6c6c'
 let s:gray5 = '#969696'
-let s:gray6 = '#303030'
 let s:indigo = '#8787af'
 let s:red = "#995977"
 let s:orange = "#a69883"
@@ -69,8 +68,8 @@ call s:HL('ModeMsg',                        s:green,    '',         '')
 call s:HL('MoreMsg',                        s:green,    '',         '')
 call s:HL('NonText',                        s:gray4,    '',         'none')
 call s:HL('Normal',                         s:gray5,    s:gray1,    'none')
-call s:HL('NormalFloat',                    '',         s:gray6,    '')
-call s:HL('Pmenu',                          s:gray5,    s:gray6,    '')
+call s:HL('NormalFloat',                    '',         s:gray2,    '')
+call s:HL('Pmenu',                          s:gray5,    s:gray2,    '')
 call s:HL('PmenuSbar',                      '',         s:gray2,    '')
 call s:HL('PmenuSel',                       '#393939',  '#9f739b',  '')
 call s:HL('PmenuThumb',                     '',         s:gray4,    '')
@@ -81,7 +80,7 @@ call s:HL('SpecialKey',                     s:gray4,    '',         '')
 call s:HL('SpellCap',                       s:blue,     s:gray2,    'undercurl')
 call s:HL('SpellBad',                       s:red,      s:gray2,    'undercurl')
 call s:HL('StatusLine',                     '#9a9a9a',  '#393939',  'none')
-call s:HL('StatusLineNC',                   '#9a9a9a',  's:gray6',  '')
+call s:HL('StatusLineNC',                   '#9a9a9a',  's:gray2',  '')
 call s:HL('TabLine',                        s:gray4,    s:gray2,    'none')
 call s:HL('TabLineFill',                    s:gray4,    s:gray2,    'none')
 call s:HL('TabLineSel',                     s:yellow,   s:gray3,    'none')
@@ -250,8 +249,13 @@ call s:HL('xmlEndTag',                      s:blue,     '',         '')
 call s:HL('xmlTag',                         s:blue,     '',         '')
 call s:HL('xmlTagName',                     s:blue,     '',         '')
 
+" Quickfix
+call s:HL('QuickFixLine',                   s:red,      '',         '')
+
 " Telescope
-call s:HL('TelescopeBorder', s:gray6, '', '')
+call s:HL('TelescopeBorder',                s:gray2,    '',         '')
+call s:HL('TelescopePromptTitle',           s:gray4,    '',         '')
+call s:HL('TelescopeMatching',              s:red,      '',         '')
 
 " Neovim terminal colors
 if has('nvim')
