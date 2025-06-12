@@ -251,7 +251,7 @@ call s:HL('xmlTag',                         s:blue,     '',         '')
 call s:HL('xmlTagName',                     s:blue,     '',         '')
 
 " Telescope
-call s:HL('TelescopeBorder, s:gray6, '', '')
+call s:HL('TelescopeBorder', s:gray6, '', '')
 
 " Neovim terminal colors
 if has('nvim')
